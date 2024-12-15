@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Am I?</title>
+    <style>
+        body 
+        {
+            background-image: url('image/untitled monkey.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 
+        {
+            margin-top: 20px;
+            font-size: 2.5em;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,105,121,1) 35%, rgba(0,212,255,1) 100%);
+        }
+        h2 
+        {
+            font-size: 1.5em;
+            margin-top: 10px;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(230,0,132,1) 35%, rgba(0,212,255,1) 100%);
+        }
+        .audio-controls 
+        {
+            margin-top: 20px;
+        }
+        button 
+        {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover 
+        {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Now, who am I?</h1>
+    <h2>I'm just a really, really mischievous monkey! Hee Hee Hee!</h2>
+
+    <div class="audio-controls">
+        <audio id="monkeyAudio" src="Audio/Dekha Hazaro.m4a">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="toggleAudio()">Let's Listen to Music</button>
+        <h1>I know im really mischievous but i genuinely love you a lot</h1>
+        <a class = "next-link" href="Surprise-3.html"><button1>Let's move to the final stage my love. Touch me</button1></a>
+        <style>
+            button1
+            {
+                background-color: rgb(225, 230, 91);
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            button1:hover
+            {
+                background-color: aquamarine;
+            }
+            .next-link
+            {
+                background-color: aliceblue;
+                box-shadow: 2px;
+                font-size: 25px;
+                text-shadow: 2px;
+                
+            }
+        </style>
+    </div>
+
+    <script>
+        let isPlaying = false;
+        const audio = document.getElementById('monkeyAudio');
+
+        function toggleAudio() {
+            const button = document.querySelector('button');
+            if (isPlaying) {
+                audio.pause();
+                button.textContent = "Let's Listen to Music";
+            } else {
+                audio.play();
+                button.textContent = 'Pause Music';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Reset button text when audio ends
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            document.querySelector('button').textContent = "Let's Listen to Music";
+        });
+    </script>
+</body>
+</html>
